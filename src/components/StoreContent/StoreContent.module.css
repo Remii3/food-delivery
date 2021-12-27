@@ -1,0 +1,22 @@
+.shop-outer {
+  display: flex;
+  position: relative;
+  width: 80%;
+  margin: 100px auto 0;
+}
+.store-items-section {
+  padding-top: 30px;
+  width: 80%;
+  margin: 60px auto;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-right: 70px;
+}
+
+@media (max-width: 600px) {
+  .store-items-section {
+    padding-right: 0;
+  }
+}

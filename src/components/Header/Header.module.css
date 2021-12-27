@@ -1,0 +1,48 @@
+.header-stipe-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #f09246;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 14;
+  width: 100%;
+  box-sizing: border-box;
+}
+.header-title {
+  font-family: sans-serif;
+  color: #fafafa;
+}
+.header-cart {
+  background-color: transparent;
+  border: solid black 1px;
+  height: 2rem;
+  margin: auto 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.header-cart p,
+i {
+  display: inline-block;
+  margin: 0 18px 0;
+  font-size: 1.3rem;
+}
+.header-cart:hover {
+  background-color: black;
+  color: white;
+}
+.header-photo-container {
+  height: 500px;
+  background-image: url("../../assets/meals.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 87.8px 0 50px;
+}
+
+@media (min-width: 600px) {
+  .header-stipe-container {
+    padding: 10px 70px;
+  }
+}
