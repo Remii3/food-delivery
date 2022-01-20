@@ -23,8 +23,8 @@
   position: relative;
 }
 .list li:hover {
-  /* border-bottom: black 1px solid; */
-  left: 5px;
+  padding-left: 8px;
+  border-left: #6fcf6f solid 5px;
 }
 @media (max-width: 600px) {
   .filterSection {
@@ -33,7 +33,6 @@
     top: 80px;
     left: 0;
     width: 100%;
-    /* min-width: 260px; */
     background-color: #fff;
     min-height: 0;
     max-height: 350px;
