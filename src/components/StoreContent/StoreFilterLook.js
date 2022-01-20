@@ -29,11 +29,16 @@ const StoreFilterLook = (props) => {
       </button>
 
       {burgerMenuClicked && (
-        <div>
+        <div className={styles["filter-outerContainer"]}>
           <h2>Search</h2>
-          <input ref={searchBar} type="text" onChange={changeInputHandler} />
+          <input
+            className={styles["filterInput"]}
+            ref={searchBar}
+            type="text"
+            onChange={changeInputHandler}
+          />
           <h3>Categories</h3>
-          <ul>
+          <ul className={styles.list}>
             <li onClick={changeTypeHandler}>All</li>
             <li onClick={changeTypeHandler}>Fruits</li>
             <li onClick={changeTypeHandler}>Vegetables</li>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CartForm.module.css";
 import useInputValidate from "../../hooks/useInputValidate";
+import Button from "../UI/Button";
 
 const letterCheck = (enteredValue) => enteredValue.trim() !== "";
 
@@ -63,54 +64,82 @@ const CartForm = (props) => {
   };
 
   return (
-    <form onSubmit={formValidation}>
+    <form onSubmit={formValidation} className={styles.outerForm}>
       <div>
         <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
+          className={`${styles.defaultInput} ${
+            nameHasError ? styles.errorInput : ""
+          } `}
           value={enteredName}
           onChange={nameChangeHandler}
           onBlur={nameBlurHandler}
         />
-        {nameHasError && <p>Error</p>}
+        {nameHasError && <p className={styles.errorMessage}>Error</p>}
       </div>
       <div>
         <label htmlFor="street">Street</label>
         <input
           type="text"
           id="street"
+          className={`${styles.defaultInput} ${
+            streetHasError ? styles.errorInput : ""
+          }`}
           value={enteredStreet}
           onChange={streetChangeHandler}
           onBlur={streetBlurHandler}
         />
-        {streetHasError && <p>Error</p>}
+        {streetHasError && <p className={styles.errorMessage}>Error</p>}
       </div>
       <div>
         <label htmlFor="address">Address</label>
         <input
           type="text"
           id="address"
+          className={`${styles.defaultInput} ${
+            addressHasError ? styles.errorInput : ""
+          }`}
           value={enteredAddress}
           onChange={addressChangeHandler}
           onBlur={addressBlurHandler}
         />
-        {addressHasError && <p>Error</p>}
+        {addressHasError && <p className={styles.errorMessage}>Error</p>}
       </div>
       <div>
         <label htmlFor="city">City</label>
         <input
           type="text"
           id="city"
+          className={`${styles.defaultInput} ${
+            cityHasError ? styles.errorInput : ""
+          }`}
           value={enteredCity}
           onChange={cityChangeHandler}
           onBlur={cityBlurHandler}
         />
-        {cityHasError && <p>Error</p>}
+        {cityHasError && <p className={styles.errorMessage}>Error</p>}
       </div>
-      <button type="submit" disabled={!formValid}>
-        Accept
-      </button>
+      <div id={styles.buttonSpace}>
+        <Button
+          type="button"
+          className={`${styles.defaultButton}`}
+          onClick={() => props.onHideForm()}
+          closeClass={true}
+        >
+          Close
+        </Button>
+        <Button
+          type="submit"
+          className={`${
+            !formValid ? styles.unavailableButton : styles.availableButton
+          }`}
+          disabled={!formValid}
+        >
+          Accept
+        </Button>
+      </div>
     </form>
   );
 };

@@ -17,8 +17,9 @@
   margin: 0;
 }
 .item-mini-window button {
-  padding: 5px 10px;
-  background-color: #ffcc00;
+  padding: 8px 10px;
+  font-size: 1rem;
+  background-color: #6fcf6f;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -31,7 +32,6 @@
   padding: 0;
   margin: 0;
 }
-
 @media (max-width: 600px) {
   .store-items-section {
     padding-right: 0;

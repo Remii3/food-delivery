@@ -1,9 +1,14 @@
-import Modal from "../UI/Modal";
-import styles from "./Cart.module.css";
-import CartItem from "./CartItem";
-import CartContext from "../../store-data/cartContext";
 import { useContext, useState } from "react";
+
+import Modal from "../UI/Modal";
+import Button from "../UI/Button";
+
+import CartItem from "./CartItem";
 import CartForm from "./CartForm";
+
+import CartContext from "../../store-data/cartContext";
+
+import styles from "./Cart.module.css";
 
 const Cart = (props) => {
   const [shownForm, setShownForm] = useState(false);
@@ -27,6 +32,7 @@ const Cart = (props) => {
     try {
       setIsSent(false);
       setIsSending(true);
+
       const data = await fetch(
         "https://shop-items-aa240-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
         {
@@ -34,9 +40,11 @@ const Cart = (props) => {
           body: JSON.stringify({ user: info, orderedItems: cartCtx.items }),
         }
       );
+
       if (!data.ok) {
         throw new Error("Something went wrong");
       }
+
       setIsSending(false);
       setIsSent(true);
       cartCtx.clearCart();
@@ -50,22 +58,39 @@ const Cart = (props) => {
   return (
     <Modal className={styles.modal} onHideCart={hideCartAndShowItems}>
       {httpsError && <p>{httpsError}</p>}
-      {isSent && !httpsError && <p>Successfully sent</p>}
+      {isSent && !httpsError && (
+        <>
+          <p>Successfully sent</p>
+          <div className={styles.buttonSpace}>
+            <Button onClick={hideCartAndShowItems} closeClass={true}>
+              Close
+            </Button>
+          </div>
+        </>
+      )}
       {isSending && <p>Sending...</p>}
+
       {!isSending && !isSent && shownForm && (
-        <CartForm onSendOrder={sendOrderHandler} />
+        <CartForm
+          onSendOrder={sendOrderHandler}
+          onHideForm={hideCartAndShowItems}
+        />
       )}
       {!shownForm && <CartItem />}
       {!isSending && !isSent && !shownForm && (
         <div className={styles.interactiveSection}>
           <h2>{totalAmount}</h2>
-          <button onClick={hideCartAndShowItems}>Close</button>
-          <button
-            onClick={() => showFormHandler(true)}
-            disabled={cartCtx.items.length < 1}
-          >
-            Order
-          </button>
+          <div className={styles.buttonSpace}>
+            <Button onClick={hideCartAndShowItems} closeClass={true}>
+              Close
+            </Button>
+            <Button
+              onClick={() => showFormHandler(true)}
+              disabled={cartCtx.items.length < 1}
+            >
+              Order
+            </Button>
+          </div>
         </div>
       )}
     </Modal>

@@ -1,6 +1,7 @@
 .filterSection {
   position: relative;
   background-color: #fff;
+  min-height: 545px;
 }
 
 .clicked {
@@ -8,12 +9,46 @@
   left: 0;
 }
 
+.filterInput {
+  font-size: 1.2rem;
+  width: 70%;
+  outline-width: 0;
+}
+
+.list li {
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 10px 0 10px -25px;
+  position: relative;
+}
+.list li:hover {
+  /* border-bottom: black 1px solid; */
+  left: 5px;
+}
 @media (max-width: 600px) {
   .filterSection {
-    position: absolute;
-    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
     left: 0;
-    background-color: #fff;
     width: 100%;
+    /* min-width: 260px; */
+    background-color: #fff;
+    min-height: 0;
+    max-height: 350px;
+  }
+  .filter-outerContainer {
+    text-align: center;
+  }
+  .list {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
+  .list li {
+    width: 100%;
+    margin: 15px auto;
+    display: block;
   }
 }

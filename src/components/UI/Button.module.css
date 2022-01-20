@@ -1,0 +1,22 @@
+.defaultButton {
+  display: inline-block;
+  width: 100px;
+  padding: 5px;
+  font-size: 1.3rem;
+  margin-left: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(50, 50, 50, 0.2);
+  background-color: rgba(111, 207, 111, 0.6);
+  cursor: pointer;
+}
+.closeClass {
+  background-color: rgba(111, 207, 111, 0.8);
+}
+.defaultButton:hover {
+  background-color: rgba(111, 207, 111, 1);
+}
+
+.defaultButton:disabled {
+  background-color: rgba(50, 50, 50, 0.1);
+}

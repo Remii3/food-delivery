@@ -1,9 +1,12 @@
-import styles from "./CartItem.module.css";
-import CartContext from "../../store-data/cartContext";
 import { useContext } from "react";
+
+import CartContext from "../../store-data/cartContext";
+
+import styles from "./CartItem.module.css";
 
 const CartItem = () => {
   const cartCtx = useContext(CartContext);
+
   return (
     <div className={styles["list-outer"]}>
       {cartCtx.items.map((item) => {

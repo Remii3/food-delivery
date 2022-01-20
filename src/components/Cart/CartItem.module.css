@@ -2,32 +2,41 @@
   max-height: 300px;
   overflow: auto;
   margin-bottom: 50px;
+  padding: 15px;
+}
+.list-outer::-webkit-scrollbar {
+  width: 10px;
+}
+.list-outer::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #7f7f7f;
 }
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px;
+  border-bottom: 1px solid #7f7f7f;
 }
 .item-amount-space {
   min-width: 50px;
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 .item-amount-space h4 {
-  /* margin: 0; */
   margin: 10px 0;
 }
-.item-amount-space button {
+.buttons-container button {
   margin: 5px;
   min-width: 35px;
   min-height: 35px;
   border-radius: 50%;
   border: none;
-}
-.buttons-container button {
   cursor: pointer;
+}
+
+.buttons-container button:active {
+  background-color: #7f7f7f;
 }

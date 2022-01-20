@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
-import styles from "./Header.module.css";
+
 import HeaderSummary from "./HeaderSummary";
+
 import CartContext from "../../store-data/cartContext";
+
+import styles from "./Header.module.css";
 
 const Header = (props) => {
   const cartCtx = useContext(CartContext);
@@ -11,6 +14,7 @@ const Header = (props) => {
   cartCtx.items.map((item) => {
     return (totalAmount += item.amount);
   });
+
   return (
     <div>
       <section className={styles["header-stipe-container"]}>
