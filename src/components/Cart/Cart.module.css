@@ -1,7 +1,23 @@
-.interactiveSection {
-  text-align: end;
+.sentMessage {
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem 0 5rem;
 }
 .buttonSpace {
+  text-align: right;
+}
+.cartInteractiveSpace {
+  border-top: 1px solid #7f7f7f;
+  padding-top: 2rem;
+  text-align: end;
+}
+
+.cartInteractiveSpace_price {
+  padding-bottom: 1rem;
+}
+
+.cartInteractiveSpace_buttonSpace {
   width: 100%;
   display: flex;
   flex-direction: row;

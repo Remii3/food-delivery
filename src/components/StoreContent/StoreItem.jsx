@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import Card from "../UI/Card";
 import styles from "./StoreItem.module.css";
 import StoreItemForm from "./StoreItemForm";
+import { SecondaryButton } from "../UI/Button";
 
 const StoreItem = (props) => {
   const [selectedAmount, setSelectedAmount] = useState(1);
@@ -24,15 +25,21 @@ const StoreItem = (props) => {
 
   return (
     <Card>
-      <div className={styles["item-mini-window"]}>
-        <div>
-          <h1>{item.name}</h1>
-          <h3>{item.summary}</h3>
+      <div className={styles["itemSpace_itemWindow"]}>
+        <div className={styles.itemWindow_titleSpace}>
+          <h1 className={styles.titleSpace_title}>{item.name}</h1>
+          <h4 className={styles.titleSpace_desc}>{item.summary}</h4>
         </div>
-        <div className={styles.buyInterface}>
-          <button onClick={addItemHandler}>
-            <i className="fas fa-shopping-cart"></i> <p>Add to cart</p>
-          </button>
+        <div className={styles.itemWindow_buyInterface}>
+          <SecondaryButton
+            onClick={addItemHandler}
+            className={styles.buyInterface_buyButton}
+          >
+            <i
+              className={`${"fas fa-shopping-cart"} ${styles.buyButton_icon}`}
+            ></i>
+            <p className={styles.buyButton_text}>Add to cart</p>
+          </SecondaryButton>
           <StoreItemForm
             itemsQuantity={selectedAmountHandler}
             price={item.price}

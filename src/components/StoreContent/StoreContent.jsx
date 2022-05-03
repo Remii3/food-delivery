@@ -69,7 +69,7 @@ const StoreContent = () => {
   };
 
   return (
-    <div className={styles["shop-outer"]}>
+    <div className={styles["shopSpace"]}>
       {httpsError && <div>{httpsError}</div>}
       {isLoading && !httpsError && <div>Loading...</div>}
       {!isLoading && !httpsError && (
@@ -78,7 +78,7 @@ const StoreContent = () => {
             onFilteredLetters={filteredInputHandler}
             onFilteredType={filteredListHandler}
           />
-          <section className={styles["store-items-section"]}>
+          <section className={styles["shopSpace_itemSpace"]}>
             {availableItems.map((item) => (
               <StoreItem key={item.id} item={item} />
             ))}

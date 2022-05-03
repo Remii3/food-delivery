@@ -1,22 +1,31 @@
 .defaultButton {
   display: inline-block;
-  width: 100px;
-  padding: 5px;
+  padding: 0.45rem 1rem;
+
   font-size: 1.3rem;
-  margin-left: 30px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 1rem;
   border: 1px solid rgba(50, 50, 50, 0.2);
-  background-color: rgba(111, 207, 111, 0.6);
+  background-color: rgba(130, 220, 130, 0.9);
+
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-.closeClass {
-  background-color: rgba(111, 207, 111, 0.8);
+
+.defaultButton-cart {
+  padding: 0.45rem 1.25rem;
+  margin-left: 1rem;
 }
+
+.defaultButton-unavailable {
+  background-color: rgba(100, 200, 100, 0.9);
+}
+
 .defaultButton:hover {
-  background-color: rgba(111, 207, 111, 1);
+  filter: brightness(0.8);
 }
 
 .defaultButton:disabled {
+  cursor: auto;
   background-color: rgba(50, 50, 50, 0.1);
 }

@@ -1,7 +1,8 @@
 .card {
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-  background-color: #fff;
-  max-height: 200.5px;
+  border-radius: 1rem;
+  background-color: rgba(0, 250, 0, 0.1);
+  height: 230px;
+  width: 252px;
 }

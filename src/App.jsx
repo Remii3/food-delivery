@@ -15,13 +15,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
       <CartProvider>
         {cartView && <Cart onHideCart={hideCart} />}
         <Header onShowCart={showCart} />
         <StoreContent />
       </CartProvider>
-    </div>
+    </>
   );
 }
 

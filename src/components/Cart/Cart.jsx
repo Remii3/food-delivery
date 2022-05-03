@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
 import Modal from "../UI/Modal";
-import Button from "../UI/Button";
+import { MainButton } from "../UI/Button";
 
 import CartItem from "./CartItem";
 import CartForm from "./CartForm";
@@ -60,11 +60,11 @@ const Cart = (props) => {
       {httpsError && <p>{httpsError}</p>}
       {isSent && !httpsError && (
         <>
-          <p>Successfully sent</p>
+          <h4 className={styles.sentMessage}>Successfully sent.</h4>
           <div className={styles.buttonSpace}>
-            <Button onClick={hideCartAndShowItems} closeClass={true}>
+            <MainButton onClick={hideCartAndShowItems} closeClass={true}>
               Close
-            </Button>
+            </MainButton>
           </div>
         </>
       )}
@@ -78,18 +78,18 @@ const Cart = (props) => {
       )}
       {!shownForm && <CartItem />}
       {!isSending && !isSent && !shownForm && (
-        <div className={styles.interactiveSection}>
-          <h2>{totalAmount}</h2>
-          <div className={styles.buttonSpace}>
-            <Button onClick={hideCartAndShowItems} closeClass={true}>
+        <div className={styles.cartInteractiveSpace}>
+          <h2 className={styles.cartInteractiveSpace_price}>{totalAmount}</h2>
+          <div className={styles.cartInteractiveSpace_buttonSpace}>
+            <MainButton onClick={hideCartAndShowItems} closeClass={true}>
               Close
-            </Button>
-            <Button
+            </MainButton>
+            <MainButton
               onClick={() => showFormHandler(true)}
               disabled={cartCtx.items.length < 1}
             >
               Order
-            </Button>
+            </MainButton>
           </div>
         </div>
       )}
