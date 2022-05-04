@@ -14,7 +14,7 @@
 
 .defaultButton-cart {
   padding: 0.45rem 1.25rem;
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .defaultButton-unavailable {
@@ -24,7 +24,9 @@
 .defaultButton:hover {
   filter: brightness(0.8);
 }
-
+.defaultButton:active {
+  filter: brightness(0.6);
+}
 .defaultButton:disabled {
   cursor: auto;
   background-color: rgba(50, 50, 50, 0.1);

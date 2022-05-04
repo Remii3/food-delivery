@@ -11,11 +11,23 @@
 }
 .titleSpace_title {
   font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .titleSpace_desc {
   padding-top: 0.5rem;
+  cursor: pointer;
   font-weight: 400;
+  transition: all 0.3s ease;
 }
+
+.titleSpace_title-hover:hover {
+  color: #5dbb63;
+}
+.titleSpace_desc-hover:hover {
+  color: #5dbb63;
+}
+
 .itemWindow_buyInterface {
   display: flex;
   align-items: flex-end;

@@ -3,6 +3,7 @@ import "../../../node_modules/hamburgers/dist/hamburgers.css";
 import styles from "./StoreContent.module.css";
 import StoreItem from "./StoreItem";
 import { useEffect, useState } from "react";
+import Header from "../Header/Header";
 
 const StoreContent = () => {
   const [itemsData, setItemsData] = useState([]);
@@ -69,23 +70,27 @@ const StoreContent = () => {
   };
 
   return (
-    <div className={styles["shopSpace"]}>
-      {httpsError && <div>{httpsError}</div>}
-      {isLoading && !httpsError && <div>Loading...</div>}
-      {!isLoading && !httpsError && (
-        <>
-          <StoreFilterLook
-            onFilteredLetters={filteredInputHandler}
-            onFilteredType={filteredListHandler}
-          />
-          <section className={styles["shopSpace_itemSpace"]}>
-            {availableItems.map((item) => (
-              <StoreItem key={item.id} item={item} />
-            ))}
-          </section>
-        </>
-      )}
-    </div>
+    <>
+      <Header />
+
+      <div className={styles["shopSpace"]}>
+        {httpsError && <div>{httpsError}</div>}
+        {isLoading && !httpsError && <div>Loading...</div>}
+        {!isLoading && !httpsError && (
+          <>
+            <StoreFilterLook
+              onFilteredLetters={filteredInputHandler}
+              onFilteredType={filteredListHandler}
+            />
+            <section className={styles["shopSpace_itemSpace"]}>
+              {availableItems.map((item) => (
+                <StoreItem key={item.id} item={item} />
+              ))}
+            </section>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 export default StoreContent;

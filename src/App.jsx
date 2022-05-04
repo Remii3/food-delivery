@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Header from "./components/Header/Header";
 import StoreContent from "./components/StoreContent/StoreContent";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store-data/CartProvider";
+import { Navigate, Route, Routes } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails";
+import Nav from "./components/Header/Nav";
 
 function App() {
   const [cartView, setCartView] = useState(false);
@@ -18,8 +20,12 @@ function App() {
     <>
       <CartProvider>
         {cartView && <Cart onHideCart={hideCart} />}
-        <Header onShowCart={showCart} />
-        <StoreContent />
+        <Nav onShowCart={showCart} />
+        <Routes>
+          <Route path="onlineshop" element={<StoreContent />} />
+          <Route path="details/:itemId" element={<ProductDetails />} />
+          <Route path="*" element={<Navigate to={"onlineshop"} replace />} />
+        </Routes>
       </CartProvider>
     </>
   );

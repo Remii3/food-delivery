@@ -40,6 +40,7 @@
   width: 100%;
   background-color: transparent;
   max-width: 250px;
+  transition: all 0.3s ease;
 }
 .inputSpace_orderInput:focus {
   border-color: rgba(111, 207, 111, 0.8);

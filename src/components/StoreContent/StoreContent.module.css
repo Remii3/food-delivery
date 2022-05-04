@@ -2,11 +2,11 @@
   display: flex;
   position: relative;
   width: 100%;
-  padding: 0 2rem;
+  padding: 2rem;
   max-width: 1400px;
-  margin: 200px auto;
-  min-height: 500px;
+  margin: 200px auto 0;
   align-items: flex-start;
+  min-height: 500px;
 }
 
 .shopSpace_itemSpace {
@@ -21,7 +21,7 @@
 @media (max-width: 600px) {
   .shopSpace {
     flex-direction: column;
-    min-height: none;
+    min-height: 0;
   }
   .shopSpace_itemSpace {
     padding-right: 0;

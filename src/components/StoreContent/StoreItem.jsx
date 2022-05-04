@@ -4,11 +4,13 @@ import Card from "../UI/Card";
 import styles from "./StoreItem.module.css";
 import StoreItemForm from "./StoreItemForm";
 import { SecondaryButton } from "../UI/Button";
+import { useNavigate } from "react-router-dom";
 
 const StoreItem = (props) => {
   const [selectedAmount, setSelectedAmount] = useState(1);
   const cartCtx = useContext(CartContext);
   const { item } = props;
+  const navigate = useNavigate();
 
   const selectedAmountHandler = (amount) => {
     setSelectedAmount(amount);
@@ -23,12 +25,24 @@ const StoreItem = (props) => {
     });
   };
 
+  const showDetails = () => {
+    navigate(`/details/${item.id}`);
+  };
+
   return (
     <Card>
       <div className={styles["itemSpace_itemWindow"]}>
-        <div className={styles.itemWindow_titleSpace}>
-          <h1 className={styles.titleSpace_title}>{item.name}</h1>
-          <h4 className={styles.titleSpace_desc}>{item.summary}</h4>
+        <div className={styles.itemWindow_titleSpace} onClick={showDetails}>
+          <h1
+            className={`${styles.titleSpace_title} ${styles["titleSpace_title-hover"]}`}
+          >
+            {item.name}
+          </h1>
+          <h4
+            className={`${styles.titleSpace_desc} ${styles["titleSpace_desc-hover"]}`}
+          >
+            {item.summary}
+          </h4>
         </div>
         <div className={styles.itemWindow_buyInterface}>
           <SecondaryButton
