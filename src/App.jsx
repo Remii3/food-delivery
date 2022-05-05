@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/onlineshop" element={<StoreContent />} />
           <Route path="/details/:itemId" element={<ProductDetails />} />
-          <Route path="/*" element={<Navigate to={"onlineshop"} replace />} />
+          <Route path="/*" element={<Navigate to={"/onlineshop"} replace />} />
         </Routes>
       </CartProvider>
     </>
