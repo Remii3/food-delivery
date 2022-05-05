@@ -22,9 +22,9 @@ function App() {
         {cartView && <Cart onHideCart={hideCart} />}
         <Nav onShowCart={showCart} />
         <Routes>
-          <Route path="onlineshop" element={<StoreContent />} />
-          <Route path="details/:itemId" element={<ProductDetails />} />
-          <Route path="*" element={<Navigate to={"onlineshop"} replace />} />
+          <Route path="/onlineshop" element={<StoreContent />} />
+          <Route path="/details/:itemId" element={<ProductDetails />} />
+          <Route path="/*" element={<Navigate to={"onlineshop"} replace />} />
         </Routes>
       </CartProvider>
     </>
