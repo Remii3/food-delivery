@@ -24,10 +24,7 @@ function App() {
         <Routes>
           <Route path="/food-delivery" element={<StoreContent />} />
           <Route path="/details/:itemId" element={<ProductDetails />} />
-          <Route
-            path="/*"
-            element={<Navigate to={"/food-delivery"} replace />}
-          />
+          <Route path="/*" element={<Navigate to={"/"} replace />} />
         </Routes>
       </CartProvider>
     </>
