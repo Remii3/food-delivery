@@ -4,3 +4,5 @@
 # production
 /build
 
+/svelte.config.js
+/public/404.html
