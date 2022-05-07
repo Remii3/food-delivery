@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StoreContent />} />
           <Route path="/details/:itemId" element={<ProductDetails />} />
-          <Route path="/*" element={<Navigate to={"/"} replace />} />
+          {/* <Route path="/*" element={<Navigate to={"/"} replace />} /> */}
         </Routes>
       </CartProvider>
     </>
